@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
+import withLess from 'next-plugin-less';
 
-export default nextConfig;
+export default withLess({
+  reactStrictMode: true,
+  cssLoaderOptions: {
+    modules: {
+      localIdentName: "[local]__[hash:base64:5]",
+    },
+  },
+});
