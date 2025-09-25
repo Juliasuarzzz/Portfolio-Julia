@@ -19,7 +19,7 @@
     text-align: center;
     .box-portfolio{
         position: absolute;
-        top: 30%;
+        top: 26%;
         // left: 50%;
         // transform: translate(-50%, -50%);
         color: white;
@@ -113,10 +113,50 @@
 }
 
 
-
-
 .header-intro.fadeout {
   opacity: 0;
   filter: blur(10px);
   pointer-events: none; 
 }
+
+// fin inicio welcome
+
+.full-page{
+    opacity: 0;
+
+    @media (min-width: 640px) {
+        padding-left: 5%;
+        padding-right: 5%;
+        
+    }
+
+    @media (min-width: 1024px) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+   
+}
+
+.show{opacity: 1;}
+
+
+.full-page.show{
+    .navbar{
+        filter: blur(0px);
+    }
+}
+
+// estilos navbar
+.navbar{
+    filter: blur(10px);
+    transition: all 0.6s ease-in-out;
+    height: 4rem;
+    
+    .navbar-brand{
+        color: #ff69b4;
+        font-weight: bold;
+    }
+}
+
+

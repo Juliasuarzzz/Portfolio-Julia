@@ -1,4 +1,5 @@
 export function initIntroAnimations() {
+    const fulpage = document.querySelector('.full-page');
     const intro = document.querySelector('.header-intro');
     const logoSpan = document.querySelectorAll('.port-web');
     const welcomeSpan = document.querySelectorAll('.welcome-to');
@@ -74,4 +75,9 @@ export function initIntroAnimations() {
     setTimeout(() => {
         intro.classList.add('fadeout');
     }, 5300);
+
+    // ⏱️ fadeout del contenedor
+    setTimeout(() => {
+        fulpage.classList.add('show');
+    }, 6000);
 }
