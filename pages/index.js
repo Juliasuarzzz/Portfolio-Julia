@@ -1,12 +1,13 @@
+import { useEffect } from 'react';
+import Head from 'next/head';
 import styles from '../styles/Home.less'
-import { useEffect } from 'react'
-import Head from 'next/head'
-import { initIntroAnimations } from '../public/js/introAnimations'; // Ajusta la ruta
-
+import { initIntroAnimations } from '../lib/introAnimations'; 
+import { paginageneral } from '../lib/paginageneral'; 
 
 export default function Intro() {
   useEffect(() => {
     initIntroAnimations();
+    paginageneral();
   }, []);
 
   return (
@@ -41,8 +42,7 @@ export default function Intro() {
       {/*fin pantalla inicio */}
 
 
-
-      {/* Inicio pagina  */}
+      {/* Inicio paginas  */}
 
       <div className='full-page'>
         {/* Inicio nav bar */}
@@ -69,7 +69,7 @@ export default function Intro() {
               
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Home</a>
+                  <a className="nav-link active" href="#">Home</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">About me</a>
@@ -85,6 +85,30 @@ export default function Intro() {
           </div>
         </nav>
     {/* Inicio Navbar */}
+
+
+    {/* inicio pagina inicial */}
+    <div className="pagina-inicio">
+      <div className="container-pagina-inicio">
+        <div className="box-desc-inicio">
+
+          <div className="box-innovate">
+            <div class="glow"></div>
+            <img src="img/star.png" alt="fondo" />
+            <span>Ready to innovate</span>
+          </div>
+
+          <div className="text-inicio">
+            <h1>Frontend</h1>
+            <h1 className='gradient'><div className="glow"></div>Developer</h1>
+          </div>
+
+        </div>
+        <div className="box-img-inicio">
+          <canvas id="dotlottie-canvas" style={{ width: "300px", height: "300px" }}></canvas>
+        </div>
+      </div>
+    </div>
 
 
 
