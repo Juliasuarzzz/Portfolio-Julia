@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.less'
 import { initIntroAnimations } from '../lib/introAnimations'; 
 import { paginageneral } from '../lib/paginageneral'; 
+import TextType from '../components/TextType.jsx';
 
 export default function Intro() {
   useEffect(() => {
@@ -103,10 +104,30 @@ export default function Intro() {
             <h1 className='gradient'><div className="glow"></div>Developer</h1>
           </div>
 
+          <div className='typing-box'>
+            <main className="p-10">
+              <TextType 
+                text={[
+                  "Creative Coder", 
+                  "Full-Stack Web Developer 🚀", 
+                  "Tech Enthusiast 💡", 
+                  "Problem Solver 🔧", 
+                  "Computer Engineering Student 🎓"
+                ]} 
+                typingSpeed={80}
+                pauseDuration={1500}
+                loop={true}
+                textColors={["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
+              />
+            </main>
+          </div>
+
         </div>
+
         <div className="box-img-inicio">
           <canvas id="dotlottie-canvas" style={{ width: "300px", height: "300px" }}></canvas>
         </div>
+        
       </div>
     </div>
 

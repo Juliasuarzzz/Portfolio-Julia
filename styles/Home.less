@@ -249,10 +249,14 @@
                     }
                 }
                 
-                
             }
-            
-            
+            .typing-box{
+                margin-top: 24px;
+                padding-left: 5px;
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+                     
         }
         .box-img-inicio{
             display: flex;
@@ -262,6 +266,24 @@
         }
     }
 }
+
+/* TextType.module.css */
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  .gradient;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
 
 .glow{
     position: absolute;
