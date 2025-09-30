@@ -9,108 +9,131 @@
 
 
 .header-intro{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: flex;
+    flex-flow: column;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+
+    position: fixed;
+    // z-index: 1;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    // height: 100vh;
     transition: 1s;
     text-align: center;
     .box-portfolio{
-        position: absolute;
-        top: 26%;
+        // position: absolute;
+        // top: 26%;
         // left: 50%;
         // transform: translate(-50%, -50%);
         color: white;
         width: 100%;
     }
 }
+/* Pon esto en tu hoja que se cargue DESPUÉS de Tailwind */
 .port-web{
-    position: relative;
-    display: inline-block;
-    bottom: -150px;
-    opacity: 0;
+    display: inline-block;              /* <- si era inline, esto lo arregla */
+    opacity: 0 !important;              /* testea si te lo pisa Tailwind */
+    transform: translate3d(0,60px,0) !important;
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     font-size: 4.5rem;
     font-weight: bold;
-    margin-right: 0.7rem; 
+    margin-right: 0.7rem;
+  }
+  
+  .port-web.active{
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) !important;
+  }
+  
 
 
-
-}
-.port-web.active{
-    bottom: -80px;
-    opacity: 1;
-    transition: ease-in-out 0.6s
-}
-
-.welcome-to{
-    position: relative;
-    display: inline-block;
-    bottom: -80px;
+  .welcome-to{
+    display: inline-block;                      /* importante si era inline */
     opacity: 0;
-    left: -200px;
+    transform: translateX(-100px);               /* más a la izquierda si quieres */
+    transition: opacity .9s ease-in-out, transform .9s ease-in-out;
+    will-change: opacity, transform;
+  
     font-size: 4.5rem;
     font-weight: bold;
     color: white;
     margin-right: 0.7rem; 
-}
-
-.welcome-to.active{
-    left: 0px;
+  }
+  
+  .welcome-to.active{
     opacity: 1;
-    transition: ease-in-out 0.9s
-}
+    transform: translateX(0);
+  }
+  
+  
 
-.box-iconos-intro{
-
+.box-iconos-intro {
     .iconos-intro{
-        position: relative;
-        display: inline-block;
-        width: 85px;
-        transition: 0.3s;
-        opacity: 0;
-        top: 0px;
+      display: inline-block;
+      width: 85px;
+  
+      /* estado inicial (oculto y un poco arriba) */
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity .6s ease, transform .6s ease; /* una sola vez aquí */
+      will-change: opacity, transform; /* perf */
     }
-}
-
-.iconos-intro.active{
-    opacity: 1;
-    transition: ease-in-out 0.9s;
-    top: 240px;
-}
-
+  
+    .iconos-intro.active{
+      opacity: 1;
+      transform: translateY(0); /* se desliza hacia abajo hasta su sitio */
+    }
+  }
 
 
-.box-link {
+
+  .box-link {
     position: relative;
-    display: inline-flex;   /* cambia inline-block → inline-flex */
-    align-items: center;    /* centra verticalmente */
-    gap: 10px;              /* espacio entre icono y texto */
-    bottom: -600px;
-    opacity: 0;
-    color: white;
+    display: inline-flex;     /* útil si hay icono + texto */
+    align-items: center;
+    gap: 10px;
     padding: 15px 30px;
-    span{  
-        font-size: 1.2rem;
+    width: fit-content;
+    margin-top: 25px;
+    color: white;
+  
+    /* Estado inicial: oculto y 24px más abajo */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity .9s ease-in-out, transform .9s ease-in-out;
+    will-change: opacity, transform;
+  
+    span { font-size: 1.2rem; }
+  
+    .glow {
+      border-radius: 999px;
+      background: linear-gradient(rgba(255, 105, 180, 0.4));
+      inset: -3px;
+      filter: blur(16px);
     }
-}
+  
+    &.active {
+      opacity: 1;
+      transform: translateY(0);  /* sube hasta su sitio */
+    }
+  }
+  
 
-.box-link::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* ocupa todo el div */
-    border-radius: 999px;
-    background: rgba(255, 105, 180, 0.4);
-    filter: blur(15px);
-    z-index: -1; /* atrás del contenido */
-}
+// .box-link::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0; /* ocupa todo el div */
+//     border-radius: 999px;
+//     background: rgba(255, 105, 180, 0.4);
+//     filter: blur(15px);
+//     z-index: -1; /* atrás del contenido */
+// }
 
-.box-link.active {
-    bottom: -470px;
-    opacity: 1;
-    transition: ease-in-out 0.9s;
-}
+
 
 
 .header-intro.fadeout {

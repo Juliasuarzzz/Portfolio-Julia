@@ -37,6 +37,7 @@ export default function Intro() {
         <div className="box-link">
           <img src="img/icon-web.svg" alt="fondo" />
           <span className="text">heloooooo</span>
+          <div class="glow"></div>
         </div>
       </div>
 
