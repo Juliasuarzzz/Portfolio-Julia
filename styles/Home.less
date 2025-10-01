@@ -488,5 +488,74 @@
 // estilos pagina about me
 .pagina-about-me{
     height: 100vh;
+
+    .container-pagina-about-me{
+      display: flex;
+      flex-flow: column;
+      .title-about-me{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        h2{.gradient;}
+        .box-transforming{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          span{
+            color: #9CA3AF;
+            font-size: 1.125rem;
+          }
+          img {
+            height: 25px;
+            filter: brightness(0) saturate(100%) invert(86%) sepia(12%) saturate(1646%) hue-rotate(293deg) brightness(101%) contrast(97%);
+          }
+
+        }
+      }
+
+      .info-box-about-me{
+          display: flex;
+          align-items: center;
+        .box-img-about-me{
+          flex: 1;
+        }
+        .box-desc-about-me{
+          flex: 1;
+
+          h2{color: white;}
+          span{
+            color: #9CA3AF;
+            font-size: 1.2rem;
+            line-height: 28px;
+            padding-right: 20%;
+            display: inline-block;
+            margin-top: 20px;
+          }
+
+        }
+        .box-img-about-me{
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          img{
+            width: 320px;         
+            height: 320px;        
+            border-radius: 50%;   
+            object-fit: cover; 
+          }
+          .glow{
+            filter: blur(8px); 
+            width: 320px;         
+            height: 320px;        
+            border-radius: 50%;   
+            object-fit: cover; 
+            }
+          
+        }
+      }
+      
+    }
 }
 

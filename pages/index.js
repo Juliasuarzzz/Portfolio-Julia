@@ -188,7 +188,7 @@ export default function Intro() {
 
           <div className='title-about-me'>
             <h2>About Me</h2>
-            <div>
+            <div className='box-transforming'>
               <img src="img/star.png" alt="fondo" />
               <span>Transforming ideas into digital experiences</span>
               <img src="img/star.png" alt="fondo" />
@@ -196,14 +196,18 @@ export default function Intro() {
           </div>
 
           <div className="info-box-about-me">
-                <div className="box-img-about-me">
-                  
-                </div>
+                
                 <div className="box-desc-about-me">
                   <h2 className='gradient'>Hello I&apos;m</h2>
                   <h2>Julia Suarez</h2>
-                  <span> a passionate Frontend Developer dedicated to crafting engaging and user-friendly web experiences. With a strong foundation in HTML, CSS, and JavaScript, I specialize in creating responsive designs that adapt seamlessly across devices. My journey in web development began with a fascination for how websites are built, leading me to pursue formal education and hands-on projects. I thrive on solving complex problems and continuously learning new technologies to stay ahead in this ever-evolving field. When I&apos;m not coding, you&apos;ll find me exploring the latest design trends or contributing to open-source projects. Let&apos;s connect and create something amazing together!</span>
+                  <span>I’m a passionate Frontend Developer skilled in HTML, CSS, and JavaScript, focused on crafting responsive, user-friendly designs. Enthusiastic about problem-solving, learning new technologies, and exploring design trends, I also enjoy contributing to open-source projects.</span>
                 </div>
+
+                <div className="box-img-about-me">
+                  <img src="img/profile.png" alt="fondo" />
+                  <div className="glow"></div>
+                </div>
+
           </div>
         </div>
       </div>
