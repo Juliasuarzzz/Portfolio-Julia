@@ -9,108 +9,131 @@
 
 
 .header-intro{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: flex;
+    flex-flow: column;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+
+    position: fixed;
+    // z-index: 1;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    // height: 100vh;
     transition: 1s;
     text-align: center;
     .box-portfolio{
-        position: absolute;
-        top: 26%;
+        // position: absolute;
+        // top: 26%;
         // left: 50%;
         // transform: translate(-50%, -50%);
         color: white;
         width: 100%;
     }
 }
+/* Pon esto en tu hoja que se cargue DESPUÉS de Tailwind */
 .port-web{
-    position: relative;
-    display: inline-block;
-    bottom: -150px;
-    opacity: 0;
+    display: inline-block;              /* <- si era inline, esto lo arregla */
+    opacity: 0 !important;              /* testea si te lo pisa Tailwind */
+    transform: translate3d(0,60px,0) !important;
+    transition: opacity .6s ease-in-out, transform .6s ease-in-out;
     font-size: 4.5rem;
     font-weight: bold;
-    margin-right: 0.7rem; 
+    margin-right: 0.7rem;
+  }
+  
+  .port-web.active{
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) !important;
+  }
+  
 
 
-
-}
-.port-web.active{
-    bottom: -80px;
-    opacity: 1;
-    transition: ease-in-out 0.6s
-}
-
-.welcome-to{
-    position: relative;
-    display: inline-block;
-    bottom: -80px;
+  .welcome-to{
+    display: inline-block;                      /* importante si era inline */
     opacity: 0;
-    left: -200px;
+    transform: translateX(-100px);               /* más a la izquierda si quieres */
+    transition: opacity .9s ease-in-out, transform .9s ease-in-out;
+    will-change: opacity, transform;
+  
     font-size: 4.5rem;
     font-weight: bold;
     color: white;
     margin-right: 0.7rem; 
-}
-
-.welcome-to.active{
-    left: 0px;
+  }
+  
+  .welcome-to.active{
     opacity: 1;
-    transition: ease-in-out 0.9s
-}
+    transform: translateX(0);
+  }
+  
+  
 
-.box-iconos-intro{
-
+.box-iconos-intro {
     .iconos-intro{
-        position: relative;
-        display: inline-block;
-        width: 85px;
-        transition: 0.3s;
-        opacity: 0;
-        top: 0px;
+      display: inline-block;
+      width: 85px;
+  
+      /* estado inicial (oculto y un poco arriba) */
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity .6s ease, transform .6s ease; /* una sola vez aquí */
+      will-change: opacity, transform; /* perf */
     }
-}
-
-.iconos-intro.active{
-    opacity: 1;
-    transition: ease-in-out 0.9s;
-    top: 240px;
-}
-
+  
+    .iconos-intro.active{
+      opacity: 1;
+      transform: translateY(0); /* se desliza hacia abajo hasta su sitio */
+    }
+  }
 
 
-.box-link {
+
+  .box-link {
     position: relative;
-    display: inline-flex;   /* cambia inline-block → inline-flex */
-    align-items: center;    /* centra verticalmente */
-    gap: 10px;              /* espacio entre icono y texto */
-    bottom: -600px;
-    opacity: 0;
-    color: white;
+    display: inline-flex;     /* útil si hay icono + texto */
+    align-items: center;
+    gap: 10px;
     padding: 15px 30px;
-    span{  
-        font-size: 1.2rem;
+    width: fit-content;
+    margin-top: 25px;
+    color: white;
+  
+    /* Estado inicial: oculto y 24px más abajo */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity .9s ease-in-out, transform .9s ease-in-out;
+    will-change: opacity, transform;
+  
+    span { font-size: 1.2rem; }
+  
+    .glow {
+      border-radius: 999px;
+      background: linear-gradient(rgba(255, 105, 180, 0.4));
+      inset: -3px;
+      filter: blur(16px);
     }
-}
+  
+    &.active {
+      opacity: 1;
+      transform: translateY(0);  /* sube hasta su sitio */
+    }
+  }
+  
 
-.box-link::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* ocupa todo el div */
-    border-radius: 999px;
-    background: rgba(255, 105, 180, 0.4);
-    filter: blur(15px);
-    z-index: -1; /* atrás del contenido */
-}
+// .box-link::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0; /* ocupa todo el div */
+//     border-radius: 999px;
+//     background: rgba(255, 105, 180, 0.4);
+//     filter: blur(15px);
+//     z-index: -1; /* atrás del contenido */
+// }
 
-.box-link.active {
-    bottom: -470px;
-    opacity: 1;
-    transition: ease-in-out 0.9s;
-}
+
 
 
 .header-intro.fadeout {
@@ -196,7 +219,7 @@
 // estilos pagina inicio
 
 .pagina-inicio{
-    height: 100vh;
+    height: 93vh;
     .container-pagina-inicio{
         display: flex;
         justify-content: space-between;
@@ -211,15 +234,18 @@
 
 
             .box-innovate{
-                border-radius: 90px;
-                background-color: #030014d6;
-                padding: 5px 10px;
-                display: flex;
-                gap: 5px;
-                border: 1px solid #f999c3e3;
-                position: relative;
-                align-items: center;
-                width: fit-content;
+                .innovate-item{
+                  border-radius: 90px;
+                  background-color: #030014d6;
+                  padding: 5px 10px;
+                  display: flex;
+                  gap: 5px;
+                  border: 1px solid #f999c3e3;
+                  position: relative;
+                  align-items: center;
+                  width: fit-content;
+
+                }
 
 
                 img{max-height: 23px;}
@@ -230,8 +256,8 @@
                 }
 
                 .glow {
-                    inset: -3px;
-                    filter: blur(8px);
+                  inset: -3px;
+                  filter: blur(8px); 
                 }
             }
             .text-inicio{
@@ -255,6 +281,77 @@
                 padding-left: 5px;
                 font-size: 1.5rem;
                 line-height: 2rem;
+                font-weight: 300;
+            }
+
+            .desc-info-inicio{
+                margin-top: 24px;
+                color: #9CA3AF;
+                font-size: 1.2rem;
+                line-height: 28px;
+                font-weight: 300;
+                padding-left: 5px;
+                padding-right: 20%;
+
+
+            }
+
+            .box-lenguaje-inicio{
+                display: flex;
+                gap: 15px;
+                margin-top: 24px;
+                padding-left: 5px;
+                .lenguaje-item{
+                    color: white;
+                    border: solid 1px #ffffff1a;
+                    border-radius: 99px;
+                    padding: 9px 17PX;
+                    background-color: #ffffff0d;
+                }
+
+            }
+
+            .box-links-inicio{
+                margin-top: 24px;
+                padding-left: 5px;
+                display: flex;
+                gap: 20px;
+                .link-item{
+                    padding: 12px 40px;
+                    width: fit-content;
+                    position: relative;
+                    background-color: #030014;
+                    color: white;
+                    border-radius: 8px;
+                    .glow{
+                        inset: -2px;
+                        filter: blur(4px);
+                    }
+                    i{margin-left: 5px;}
+                }
+            }
+
+            .box-redes-inicio{
+              display: flex;
+              margin-top: 40px;
+              gap: 25px;
+              padding-left: 5px;
+              
+              .redes-item{
+                color: white;
+                position: relative;
+                background-color: #030014;
+                padding: 11px 12px;
+                padding-top: 9px;
+                border-radius: 8px;
+                img{
+                  height: 30px;
+                }
+              }
+              .glow{
+                inset: -2px;
+                filter: blur(4px);
+              }
             }
                      
         }
@@ -262,10 +359,44 @@
             display: flex;
             justify-content: space-around;
             flex: 1;
+            opacity: 0;
+            transform: translateX(100px); /* empieza fuera de la derecha */
+            transition: all 1.0s ease-out;
             
         }
     }
 }
+
+/* Estado inicial oculto */
+.box-innovate,
+.text-inicio,
+.typing-box,
+.desc-info-inicio,
+.box-lenguaje-inicio,
+.box-links-inicio,
+.box-redes-inicio {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+/* Cuando se activa la animación */
+.box-innovate.show,
+.text-inicio.show,
+.typing-box.show,
+.desc-info-inicio.show,
+.box-lenguaje-inicio.show,
+.box-links-inicio.show,
+.box-redes-inicio.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.box-img-inicio.show {
+  opacity: 1 !important;
+  transform: translateX(0) !important; /* entra a su posición */
+}
+
 
 /* TextType.module.css */
 .text-type {
@@ -284,6 +415,35 @@
   display: none;
 }
 
+/* ShinyText.jsx */
+.shiny-text {
+  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}
+
 
 .glow{
     position: absolute;
@@ -292,4 +452,41 @@
     z-index: -1;
 }
 
+
+// fin estilos pagina inicio
+
+//estilos scroll down
+
+/* Para Chrome, Edge y Safari */
+::-webkit-scrollbar {
+  width: 6px; /* grosor de la barra */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* track transparente */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* la “rallita” al 50% */
+  border-radius: 3px; /* bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* efecto al pasar el mouse */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin; /* barra fina */
+  scrollbar-color: rgba(255,255,255,0.5) transparent; /* thumb y track */
+}
+
+
+
+//fin estilos scroll down
+
+// estilos pagina about me
+.pagina-about-me{
+    height: 100vh;
+}
 
