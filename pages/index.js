@@ -3,6 +3,8 @@ import Head from 'next/head';
 import styles from '../styles/Home.less'
 import { initIntroAnimations } from '../lib/introAnimations'; 
 import { paginageneral } from '../lib/paginageneral'; 
+import { initAboutMeObserver } from '../lib/Aboutme';
+
 import TextType from '../components/TextType.jsx';
 import ShinyText from '../components/ShinyText.jsx';
 
@@ -10,6 +12,7 @@ export default function Intro() {
   useEffect(() => {
     initIntroAnimations();
     paginageneral();
+    initAboutMeObserver();
   }, []);
 
   return (
@@ -200,7 +203,23 @@ export default function Intro() {
                 <div className="box-desc-about-me">
                   <h2 className='gradient'>Hello I&apos;m</h2>
                   <h2>Julia Suarez</h2>
-                  <span>I’m a passionate Frontend Developer skilled in HTML, CSS, and JavaScript, focused on crafting responsive, user-friendly designs. Enthusiastic about problem-solving, learning new technologies, and exploring design trends, I also enjoy contributing to open-source projects.</span>
+                  <span className='text-description'>I’m a passionate Frontend Developer skilled in HTML, CSS, and JavaScript, focused on crafting responsive, user-friendly designs. Enthusiastic about problem-solving, learning new technologies, and exploring design trends, I also enjoy contributing to open-source projects.</span>
+                  <div className="box-frase-about-me">
+                    <img src="img/comillas.svg" alt="fondo" />
+                    <span>&quot;Leveraging AI as a professional tool, not a replacement.&quot;</span>
+                  </div>
+                  <div className="box-button-about-me">
+                    <div className="button-cv">
+                      <i class="fa-regular fa-file-lines"></i>
+                      Download CV
+                      <div class="glow"></div>
+                    </div>
+                    <div className="button-contact">
+                      <i class="fa-solid fa-code"></i>
+                      View Projects
+                      <div class="glow"></div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="box-img-about-me">
@@ -209,6 +228,34 @@ export default function Intro() {
                 </div>
 
           </div>
+
+          <div className="box-expe-about-me">
+            <div className="project-box">
+              <div className='first-icon'><img src="img/code2.svg" alt="fondo" /></div>
+              <span className="count">10</span>
+              <span className="text">TOTAL PROJECTS </span>
+              <span className="line">Innovative web solutions crafted</span>
+              <div className="bg-icon"><img className="bg-icon" src="img/arrow-up-left.svg" alt="fondo" /></div>
+            </div>
+
+            <div className="certif-box">
+              <div className='first-icon'><img src="img/certif.svg" alt="fondo" /></div>
+              <span className="count">5</span>
+              <span className="text">CERTIFICATES</span>
+              <span className="line">Professional skills validated</span>
+              <div className="bg-icon"><img className="bg-icon" src="img/arrow-up-left.svg" alt="fondo" /></div>
+            </div>
+
+            <div className="years-box">
+              <div className='first-icon'><img src="img/world.svg" alt="fondo" /></div>
+              <span class="count" data-target="300">0</span>
+              <span className="text">YEARS OF EXEPRIENCE</span>
+              <span className="line">Continuous learning journey</span>
+              <div className="bg-icon"><img className="bg-icon" src="img/arrow-up-left.svg" alt="fondo" /></div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
