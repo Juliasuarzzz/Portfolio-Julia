@@ -11,7 +11,7 @@
 .header-intro{
     display: flex;
     flex-flow: column;
-    height: 100vh;
+    //height: 100vh;
     justify-content: center;
     align-items: center;
 
@@ -219,8 +219,9 @@
 // estilos pagina inicio
 
 .pagina-inicio{
-    height: 93vh;
+    //height: 93vh;
     .container-pagina-inicio{
+        margin-bottom: 84px;
         display: flex;
         justify-content: space-between;
         height: 100%;
@@ -487,14 +488,15 @@
 
 // estilos pagina about me
 .pagina-about-me{
-    height: 100vh;
+    margin-bottom: 84px;
+    //height: 100vh;
 
     .container-pagina-about-me{
       display: flex;
       flex-flow: column;
 
       .title-about-me{
-        margin-bottom: 70px;
+        margin-bottom: 40px;
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -760,41 +762,55 @@
   transition-delay: 0.2s; /* Puedes ajustar el delay */
 }
 
-/* Estado inicial: ocultos y desplazados según dirección */
-.project-box {
-  opacity: 0;
-  transform: translateX(-50px); /* desde la izquierda */
-  transition: all 0.8s ease;
-}
-
-.certif-box {
-  opacity: 0;
-  transform: translateY(50px); /* desde abajo */
-  transition: all 0.8s ease;
-}
-
+/* Estado inicial: ocultas y desplazadas hacia abajo */
+.project-box,
+.certif-box,
 .years-box {
   opacity: 0;
-  transform: translateX(50px); /* desde la derecha */
-  transition: all 0.8s ease;
+  transform: translateY(60px);
+  transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+  will-change: opacity, transform;
 }
 
-/* Animación cuando aparece */
-.box-expe-about-me.appear2 .project-box {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.5s;
-}
-
-.box-expe-about-me.appear2 .certif-box {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-
+/* Cuando el contenedor padre tiene la clase .appear2 */
+.box-expe-about-me.appear2 .project-box,
+.box-expe-about-me.appear2 .certif-box,
 .box-expe-about-me.appear2 .years-box {
   opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.1s;
+  transform: translateY(0);
 }
 
+/* Aparición escalonada */
+.box-expe-about-me.appear2 .project-box {
+  transition-delay: 0.2s;
+}
+.box-expe-about-me.appear2 .certif-box {
+  transition-delay: 0.4s;
+}
+.box-expe-about-me.appear2 .years-box {
+  transition-delay: 0.6s;
+}
+
+
+//final animacion about me 
+
+//Inicio estilos showcase
+.pagina-showcase{
+  margin-bottom: 84px;
+
+  .container-pagina-showcase{
+    display: flex;
+    flex-flow: column;
+    .titulo{
+      margin-bottom: 40px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      h2{.gradient;}
+      span{
+        color: #9CA3AF;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
