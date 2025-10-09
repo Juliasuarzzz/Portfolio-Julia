@@ -221,6 +221,7 @@
 .pagina-inicio{
     height: 93vh;
     .container-pagina-inicio{
+        margin-bottom: 84px;
         display: flex;
         justify-content: space-between;
         height: 100%;
@@ -487,14 +488,15 @@
 
 // estilos pagina about me
 .pagina-about-me{
-    height: 100vh;
+    margin-bottom: 84px;
+    //height: 100vh;
 
     .container-pagina-about-me{
       display: flex;
       flex-flow: column;
 
       .title-about-me{
-        margin-bottom: 70px;
+        margin-bottom: 40px;
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -611,6 +613,8 @@
         grid-template-columns: repeat(3, 1fr);
         margin-top: 67px;
         gap: 24px;
+        margin-bottom: 24px;
+
         .project-box, .certif-box, .years-box{
           grid-template-columns: repeat(2, 1fr);
           display: grid;
@@ -760,41 +764,110 @@
   transition-delay: 0.2s; /* Puedes ajustar el delay */
 }
 
-/* Estado inicial: ocultos y desplazados según dirección */
-.project-box {
-  opacity: 0;
-  transform: translateX(-50px); /* desde la izquierda */
-  transition: all 0.8s ease;
-}
-
-.certif-box {
-  opacity: 0;
-  transform: translateY(50px); /* desde abajo */
-  transition: all 0.8s ease;
-}
-
+/* Estado inicial: ocultas y desplazadas hacia abajo */
+.project-box,
+.certif-box,
 .years-box {
   opacity: 0;
-  transform: translateX(50px); /* desde la derecha */
-  transition: all 0.8s ease;
+  transform: translateY(60px);
+  transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+  will-change: opacity, transform;
 }
 
-/* Animación cuando aparece */
-.box-expe-about-me.appear2 .project-box {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.5s;
-}
-
-.box-expe-about-me.appear2 .certif-box {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-
+/* Cuando el contenedor padre tiene la clase .appear2 */
+.box-expe-about-me.appear2 .project-box,
+.box-expe-about-me.appear2 .certif-box,
 .box-expe-about-me.appear2 .years-box {
   opacity: 1;
-  transform: translateX(0);
-  transition-delay: 1.1s;
+  transform: translateY(0);
 }
 
+/* Aparición escalonada */
+.box-expe-about-me.appear2 .project-box {
+  transition-delay: 0.2s;
+}
+.box-expe-about-me.appear2 .certif-box {
+  transition-delay: 0.4s;
+}
+.box-expe-about-me.appear2 .years-box {
+  transition-delay: 0.6s;
+}
+
+
+//final animacion about me 
+
+//Inicio estilos showcase
+.pagina-showcase{
+  margin-bottom: 84px;
+
+  .container-pagina-showcase{
+    display: flex;
+    flex-flow: column;
+    .titulo{
+      margin-bottom: 40px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      h2{.gradient;}
+      span{
+        color: #9CA3AF;
+        font-size: 1.125rem;
+      }
+    }
+    .box-seleccionar{
+      gap: 24px;
+      margin-bottom: 2rem;
+      padding: 8px 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background-color: #ffffff0d;
+      border-radius: 20px;
+      border: solid 1px #ffffff1a;
+
+      .proyectos.activa, .certificates.activa, .tech-stack.activa{
+        background: rgba(249, 153, 195, 0.2);
+        color: white;
+        img{
+        filter: unset !important;
+        }
+        
+      }
+      .proyectos, .certificates, .tech-stack{
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 16px;
+        color: #81848d;
+        img{
+          margin-bottom: 5px;
+          filter: invert(74%) sepia(90%) saturate(137%) hue-rotate(185deg) brightness(195%) contrast(18%);        }
+      }
+
+    }
+
+    .box-mostrar-seleccion{
+      .proyectos-mostrar, .certificates-mostrar, .tech-stack-mostrar{
+        display: none;
+      }
+      .proyectos-mostrar.activa, .certificates-mostrar.activa, .tech-stack-mostrar.activa{
+        display: grid;
+      }
+
+      .proyectos-mostrar{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        span{
+          background: rgba(249, 153, 195, 0.2);
+          color: white;
+          border-radius: 15px;
+        }
+      }
+    }
+    
+  }
+}

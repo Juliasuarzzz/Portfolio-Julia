@@ -3,7 +3,9 @@ import Head from 'next/head';
 import styles from '../styles/Home.less'
 import { initIntroAnimations } from '../lib/introAnimations'; 
 import { paginageneral } from '../lib/paginageneral'; 
-import { initAboutMeObserver } from '../lib/Aboutme';
+import { initAboutMeObserver } from '../lib/aboutme';
+import { showcase } from '../lib/showcase';
+
 
 import TextType from '../components/TextType.jsx';
 import ShinyText from '../components/ShinyText.jsx';
@@ -13,6 +15,7 @@ export default function Intro() {
     initIntroAnimations();
     paginageneral();
     initAboutMeObserver();
+    showcase();
   }, []);
 
   return (
@@ -258,12 +261,62 @@ export default function Intro() {
 
         </div>
       </div>
+      {/* Final aboout me */}
+
+      {/* Inicio showcase */}
+      <div className='pagina-showcase'>
+        <div className='container-pagina-showcase'>
+          <div className='titulo'>
+            <h2>Portfolio Showcase</h2>
+            <span>Explore my journey through projects, certifications, and technical expertise. Each section represents a milestone in my continuous learning path.</span>
+          </div>
+
+          <div className='box-seleccionar'>
+            <div className='proyectos'>
+              <img src="img/code2.svg" alt="fondo" />
+              <span>Projects</span>
+            </div>
+            <div className='certificates'>
+              <img src="img/certif.svg" alt="fondo" />
+              <span>Certificates</span>
+            </div>
+            <div className='tech-stack'>
+              <img src="img/world.svg" alt="fondo" />
+              <span>Tech Stack</span>
+            </div>
+          </div>
+
+          <div className='box-mostrar-seleccion'>
+            <div className='proyectos-mostrar'>
+              <span>Projects</span>
+              <span>Projects</span>
+              <span>Projects</span>
+              <span>Projects</span>
+            </div>
+            <div className='certificates-mostrar'>
+              <span>Certificates</span>
+            </div>
+            <div className='tech-stack-mostrar'>
+              <span>Tech Stack</span>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+
+
     </div>
 
 
 
 
 
+             
 
 
 
