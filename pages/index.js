@@ -7,6 +7,7 @@ import { initAboutMeObserver } from '../lib/aboutme';
 import { showcase } from '../lib/showcase';
 
 
+
 import TextType from '../components/TextType.jsx';
 import ShinyText from '../components/ShinyText.jsx';
 
@@ -302,9 +303,12 @@ export default function Intro() {
           </div>
 
 
+
         </div>
 
-      </div>
+      </div> 
+
+    </div>
 
 
 
@@ -321,6 +325,6 @@ export default function Intro() {
 
 
     </div>
-    </div>
+    
   );
 }
