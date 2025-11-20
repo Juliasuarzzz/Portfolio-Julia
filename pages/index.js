@@ -45,7 +45,7 @@ export default function Intro() {
         <div className="box-link">
           <img src="img/icon-web.svg" alt="fondo" />
           <span className="text">heloooooo</span>
-          <div class="glow"></div>
+          <div className="glow"></div>
         </div>
       </div>
 
@@ -150,13 +150,13 @@ export default function Intro() {
           <div className="box-links-inicio">
             <div className="link-item">
               Projects
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <div class="glow"></div>
+              <i className="fa-solid fa-arrow-up-right-from-square"></i>
+              <div className="glow"></div>
             </div>
             <div className="link-item">
               Contact
-              <i class="fa-regular fa-envelope"></i>
-              <div class="glow"></div>
+              <i className="fa-regular fa-envelope"></i>
+              <div className="glow"></div>
             </div> 
 
           </div>
@@ -164,15 +164,15 @@ export default function Intro() {
           <div className="box-redes-inicio">
               <a className="redes-item">
                 <img src="img/github.svg" alt="fondo" />
-                <div class="glow"></div>
+                <div className="glow"></div>
               </a>
               <a className="redes-item">
                 <img src="img/linkedin.svg" alt="fondo" />
-                <div class="glow"></div>
+                <div className="glow"></div>
               </a>
               <a className="redes-item">
                 <img src="img/inst.svg" alt="fondo" />
-                <div class="glow"></div>
+                <div className="glow"></div>
               </a>
           </div>
 
@@ -214,14 +214,14 @@ export default function Intro() {
                   </div>
                   <div className="box-button-about-me">
                     <div className="button-cv">
-                      <i class="fa-regular fa-file-lines"></i>
+                      <i className="fa-regular fa-file-lines"></i>
                       Download CV
-                      <div class="glow"></div>
+                      <div className="glow"></div>
                     </div>
                     <div className="button-contact">
-                      <i class="fa-solid fa-code"></i>
+                      <i className="fa-solid fa-code"></i>
                       View Projects
-                      <div class="glow"></div>
+                      <div className="glow"></div>
                     </div>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export default function Intro() {
 
             <div className="years-box">
               <div className='first-icon'><img src="img/world.svg" alt="fondo" /></div>
-              <span class="count" data-target="300">0</span>
+              <span className="count" data-target="300">0</span>
               <span className="text">YEARS OF EXEPRIENCE</span>
               <span className="line">Continuous learning journey</span>
               <div className="bg-icon"><img className="bg-icon" src="img/arrow-up-left.svg" alt="fondo" /></div>
@@ -267,13 +267,14 @@ export default function Intro() {
       {/* Inicio showcase */}
       <div className='pagina-showcase'>
         <div className='container-pagina-showcase'>
+
           <div className='titulo'>
             <h2>Portfolio Showcase</h2>
             <span>Explore my journey through projects, certifications, and technical expertise. Each section represents a milestone in my continuous learning path.</span>
           </div>
 
           <div className='box-seleccionar'>
-            <div className='proyectos'>
+            <div className='proyectos activa'>
               <img src="img/code2.svg" alt="fondo" />
               <span>Projects</span>
             </div>
@@ -288,18 +289,140 @@ export default function Intro() {
           </div>
 
           <div className='box-mostrar-seleccion'>
-            <div className='proyectos-mostrar'>
-              <span>Projects</span>
-              <span>Projects</span>
-              <span>Projects</span>
-              <span>Projects</span>
+            <div className='proyectos-mostrar activa'>
+
+              <div className='proyecto-box'>
+                <img src="img/delivero.png" alt="fondo" />
+                <span className='title'>Deliveroo Project</span>
+                <span className='desc'>Desarrollé una réplica completa de la web de Deliveroo como proyecto escolar, incluyendo su interfaz de usuario, diseño responsive y funcionalidades principales de pedidos y menús.</span>
+                <a href="https://github.com/juliasuarz/Delivero" target="_blank" rel="noopener noreferrer" className="btn-code">Github code <img src="img/arrow-up.svg" alt="fondo" /></a> 
+              </div>
+
+              <div className='proyecto-box'>
+                <img src="img/biensa.png" alt="fondo" />
+                <span className='title'>Biensa Project</span>
+                <span className='desc'>Desarrollé una página web enfocada en la salud mental, donde los usuarios pueden chatear en tiempo real con médicos y profesionales, al estilo WhatsApp. El sitio también ofrece información y recursos.</span>
+                <a href="https://github.com/juliasuarz/Biensa/tree/julia" target="_blank" rel="noopener noreferrer" className="btn-code">Github code <img src="img/arrow-up.svg" alt="fondo" /></a> 
+              </div>
+
+              <div className='proyecto-box'>
+                <img src="img/whatsapp.png" alt="fondo" />
+                <span className='title'>WhatsApp Project</span>
+                <span className='desc'>Desarrollé una aplicación web inspirada en WhatsApp, que permite a los usuarios registrarse, agregar contactos, chatear en tiempo real y bloquear usuarios.</span>
+                <a href="https://github.com/juliasuarz/whatsapp_v3/tree/main" target="_blank" rel="noopener noreferrer" className="btn-code">Github code <img src="img/arrow-up.svg" alt="fondo" /></a> 
+             </div>
+
+              
+
             </div>
+
             <div className='certificates-mostrar'>
-              <span>Certificates</span>
+
+              <div className='certificates-box'>
+                <img src="img/certif-phyton.png" alt="fondo" />
+              </div>
+
+              <div className='certificates-box'>
+                <h3>Certificación AWS Cloud Practitioner</h3>
+                <h4>In progress...</h4>
+              </div>
+
+              <div className='certificates-box'>
+                <h3>Certificación AZ-900: Microsoft Azure Fundamentals</h3>
+                <h4>In progress...</h4>
+              </div>
+
             </div>
+
             <div className='tech-stack-mostrar'>
-              <span>Tech Stack</span>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/html.svg" alt="fondo" />
+                </div>
+                <span>HTML</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/css.svg" alt="fondo" />
+                </div>
+                <span>CSS</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/javascript.svg" alt="fondo" />
+                </div>
+                <span>JavaScript</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/bootstrap.svg" alt="fondo" />
+                </div>
+                <span>Bootstrap</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/github2.svg" alt="fondo" />
+                </div>
+                <span>GitHub</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/laravel.png" alt="fondo" />
+                </div>
+                <span>Laravel</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/python.png" alt="fondo" />
+                </div>
+                <span>Python</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/php.svg" alt="fondo" />
+                </div>
+                <span>PHP</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/mysql.webp" alt="fondo" />
+                </div>
+                <span>MySql</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/figma.png" alt="fondo" />
+                </div>
+                <span>figma</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/jquery.png" alt="fondo" />
+                </div>
+                <span>jquery</span>
+              </div>
+
+              <div className='tech-box'>
+                <div className="icon-wrap">
+                  <img src="img/powershell.png" alt="fondo" />
+                </div>
+                <span>PowerShell</span>
+              </div>
+
             </div>
+          
+
           </div>
 
 
@@ -307,6 +430,63 @@ export default function Intro() {
         </div>
 
       </div> 
+      {/* Fin showcase */}
+
+      {/* Inicio contacto */}
+      <div className='pagina-contacto'>
+        <div className='container-pagina-contacto'>
+
+          <div className='titulo'>
+            <h2>Contact me</h2>
+            <span>Have a question? Send me a message, and I'll get back to you right away.</span>
+          </div>
+          
+          <div className='container-form'>
+
+            <div className='box-info-contacto'>
+              <p>dsknsdkns </p>
+
+            </div>
+
+
+            <div className='box-form-contacto'>
+              <div className="desc-box-form">
+                <h2 className="title">Contact</h2>
+                <img src="img/share.svg" alt="icono" />
+                <span className="info">Anything to discuss? Send me a message and let's talk.</span>
+              </div>
+              <form action="https://formspree.io/f/mblpkaka" method="POST">
+                <label className="box-label">
+                  <i className="fa-regular fa-user"></i>
+                  <input type="name" name="name" required/>
+                </label>
+
+                <label className="box-label">
+                  <i className="fa-regular fa-envelope"></i>
+                  <input type="email" name="email" required/>
+                </label>
+
+                <label className="box-label">
+                  <i className="fa-regular fa-message"></i>
+                 
+                  <textarea name="message" required></textarea>
+                </label>
+
+                <button type="submit">Enviar</button>
+              </form>
+
+            </div>
+          
+          </div>
+
+                
+
+
+
+
+        </div>
+
+      </div>
 
     </div>
 
