@@ -260,7 +260,7 @@ export default function Intro() {
 
                 <div className="box-img-about-me">
                   <div className="bg-respl-about-me">
-                  <img src="img/IMG_5442.jpg" alt="fondo" />
+                  <img src="img/perfil-icon.jpg" alt="fondo" />
                   </div>
                   <div className="glow"></div>
 
@@ -445,7 +445,7 @@ export default function Intro() {
 
               <div className='tech-box'>
                 <div className="icon-wrap">
-                  <img src="img/laravel.png" alt="fondo" />
+                  <img src="img/Laravel.png" alt="fondo" />
                 </div>
                 <span>Laravel</span>
               </div>
@@ -487,9 +487,9 @@ export default function Intro() {
 
               <div className='tech-box'>
                 <div className="icon-wrap">
-                  <img src="img/powershell.png" alt="fondo" />
+                  <img src="img/node-icon.webp" alt="fondo" />
                 </div>
-                <span>PowerShell</span>
+                <span>Node js</span>
               </div>
 
             </div>
