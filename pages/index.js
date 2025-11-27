@@ -260,7 +260,7 @@ export default function Intro() {
 
                 <div className="box-img-about-me">
                   <div className="bg-respl-about-me">
-                  <img src="img/profile.png" alt="fondo" />
+                  <img src="img/IMG_5442.jpg" alt="fondo" />
                   </div>
                   <div className="glow"></div>
 
