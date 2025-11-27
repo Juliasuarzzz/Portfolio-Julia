@@ -187,15 +187,15 @@ export default function Intro() {
           </div>
 
           <div className="box-redes-inicio" id="about">
-              <a className="redes-item">
+              <a className="redes-item" href="https://www.linkedin.com/in/julia-suarez-ba7a81267/">
                 <img src="img/github.svg" alt="fondo" />
                 <div className="glow"></div>
               </a>
-              <a className="redes-item">
+              <a className="redes-item" href="https://github.com/Juliasuarzzz">
                 <img src="img/linkedin.svg" alt="fondo" />
                 <div className="glow"></div>
               </a>
-              <a className="redes-item">
+              <a className="redes-item" >
                 <img src="img/inst.svg" alt="fondo" />
                 <div className="glow"></div>
               </a>
