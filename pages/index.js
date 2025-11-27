@@ -348,7 +348,7 @@ export default function Intro() {
               </div>
 
               <div className='proyecto-box'>
-                <img src="img/biensa.png" alt="fondo" />
+                <img src="img/Biensa.png" alt="fondo" />
                 <span className='title en'>Biensa Project</span>
                 <span className='title esp'>Proyecto Biensa</span>
                 <span className='desc en'>I developed a website focused on mental health, where users can chat in real-time with doctors and professionals, similar to WhatsApp. The site also offers information and resources.</span>
@@ -452,7 +452,7 @@ export default function Intro() {
 
               <div className='tech-box'>
                 <div className="icon-wrap">
-                  <img src="img/python.png" alt="fondo" />
+                  <img src="img/Python.png" alt="fondo" />
                 </div>
                 <span>Python</span>
               </div>
